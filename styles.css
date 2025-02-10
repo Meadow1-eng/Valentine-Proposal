@@ -1,7 +1,7 @@
 /* General Styles */
 body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Gradient background */
+  font-family: 'Georgia', serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb); /* Soft gradient background */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,17 +13,25 @@ body {
 .container {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 1;
 }
 
 h1 {
-  color: #d32f2f; /* Red color for the text */
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  color: #d32f2f; /* Romantic red color */
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-family: 'Dancing Script', cursive; /* Fancy font for the heading */
+}
+
+.subtitle {
+  color: #555;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  font-style: italic;
 }
 
 .buttons {
@@ -36,23 +44,28 @@ button {
   padding: 15px 30px;
   font-size: 1.2rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 50px; /* Rounded buttons */
   cursor: pointer;
   transition: transform 0.2s ease, background-color 0.3s ease;
+  font-family: 'Georgia', serif;
 }
 
-#yes-btn, #definitely-btn {
-  background-color: #4CAF50; /* Green for Yes and Definitely */
+#yes-btn {
+  background: linear-gradient(135deg, #4CAF50, #45a049); /* Soft green gradient */
+  color: white;
+}
+
+#definitely-btn {
+  background: linear-gradient(135deg, #FF6F61, #FFA07A); /* Soft coral gradient */
   color: white;
 }
 
 #yes-btn:hover, #definitely-btn:hover {
-  background-color: #45a049;
   transform: scale(1.1);
 }
 
 #no-btn {
-  background-color: #f44336; /* Red for No */
+  background: linear-gradient(135deg, #f44336, #e57373); /* Soft red gradient */
   color: white;
   position: relative; /* Allows the button to move */
 }
@@ -61,6 +74,7 @@ button {
   margin-top: 20px;
   font-size: 1.5rem;
   color: #d32f2f;
+  font-family: 'Dancing Script', cursive;
 }
 
 /* Flower Animation */
@@ -111,33 +125,35 @@ button {
 
 .popup-content {
   background: white;
-  padding: 30px;
-  border-radius: 15px;
+  padding: 40px;
+  border-radius: 20px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .popup-content h2 {
   color: #d32f2f;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
+  font-family: 'Dancing Script', cursive;
 }
 
 .popup-content p {
   font-size: 1.2rem;
   margin-bottom: 20px;
+  color: #555;
 }
 
 .popup-content button {
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background: linear-gradient(135deg, #4CAF50, #45a049); /* Soft green gradient */
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .popup-content button:hover {
-  background-color: #45a049;
+  background: linear-gradient(135deg, #45a049, #4CAF50);
 }
