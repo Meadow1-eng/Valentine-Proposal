@@ -108,6 +108,13 @@ button {
     transform: translateY(0) rotate(360deg);
   }
 }
+ 
+.footer
+{ color: #555;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  font-style: italic;
+}
 
 /* Popup Styles */
 .popup {
