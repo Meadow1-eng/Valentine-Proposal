@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day Proposal</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Be My Valentine?</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Will you be my Valentine?</h1>
-        <div class="buttons">
-            <button id="yes-btn" class="btn">Yes</button>
-            <button id="definitely-btn" class="btn">Definitely</button>
-        </div>
+  <div class="container">
+    <h1> Marrie will You Be My Valentine?</h1>
+    <div class="buttons">
+      <button id="yes-btn">Yes</button>
+      <button id="definitely-btn">Definitely</button>
+      <button id="no-btn">No</button>
     </div>
+    <p id="response"></p>
+  </div>
 
-    <!-- Pop-up -->
-    <div id="response-popup" class="response-popup">
-        <div class="popup-content">
-            <h2>Yay! ❤️</h2>
-            <p>You just made my day special! 🌹</p>
-            <img src="https://www.w3schools.com/w3images/flowers.jpg" alt="Flowers" class="flowers-image">
-            <button id="close-btn" class="btn">Close</button>
-        </div>
+  <!-- Flower Animation Container -->
+  <div id="flower-animation"></div>
+
+  <!-- Popup -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h2>Yay! You Said Yes! 💖</h2>
+      <p>You've made me the happiest person in the world! Let's make this Valentine's Day unforgettable!</p>
+      <button id="close-popup">Close</button>
     </div>
+  </div>
 
-    <div id="flowers"></div>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
