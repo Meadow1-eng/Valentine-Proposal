@@ -3,8 +3,11 @@ const definitelyBtn = document.getElementById('definitely-btn');
 const noBtn = document.getElementById('no-btn');
 const response = document.getElementById('response');
 const flowerAnimation = document.getElementById('flower-animation');
-const popup = document.getElementById('popup');
+const popup = document.getElementById('popup'); // Make sure this is correctly referenced
 const closePopup = document.getElementById('close-popup');
+
+// Ensure popup is hidden initially
+popup.style.display = 'none';
 
 function moveNoButton() {
   const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
@@ -29,23 +32,23 @@ function createFlowers() {
 }
 
 function showPopup() {
-  popup.style.display = 'flex';
+  popup.style.display = 'flex'; // This makes sure the popup appears
 }
 
 yesBtn.addEventListener('click', () => {
   response.textContent = "Yay! You made me the happiest person! 💖";
   noBtn.style.display = 'none';
   createFlowers();
-  setTimeout(showPopup, 1000); // Show popup after 1 seconds
+  setTimeout(showPopup, 1000); // Show popup after 1 second
 });
 
 definitelyBtn.addEventListener('click', () => {
   response.textContent = "I knew you'd say definitely! 💖";
   noBtn.style.display = 'none';
   createFlowers();
-  setTimeout(showPopup, 1000); // Show popup after 1 seconds
+  setTimeout(showPopup, 1000); // Show popup after 1 second
 });
 
 closePopup.addEventListener('click', () => {
-  popup.style.display = 'none';
+  popup.style.display = 'none'; // Hide popup on close button click
 });
