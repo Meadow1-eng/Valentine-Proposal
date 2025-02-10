@@ -111,7 +111,7 @@ button {
 
 /* Popup Styles */
 #popup {
-    display: none !important; /* Ensure it is hidden by default */
+    display: none; /* ✅ Initially hidden */
     position: fixed;
     top: 0;
     left: 0;
@@ -129,6 +129,7 @@ button {
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out; /* Smooth fade-in effect */
 }
 
 .popup-content h2 {
@@ -156,4 +157,16 @@ button {
 
 .popup-content button:hover {
     background: linear-gradient(135deg, #45a049, #4CAF50);
+}
+
+/* Fade-in animation for popup */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
