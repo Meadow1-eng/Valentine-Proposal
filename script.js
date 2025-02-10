@@ -36,14 +36,14 @@ yesBtn.addEventListener('click', () => {
   response.textContent = "Yay! You made me the happiest person! 💖";
   noBtn.style.display = 'none';
   createFlowers();
-  setTimeout(showPopup, 2000); // Show popup after 2 seconds
+  setTimeout(showPopup, 1000); // Show popup after 2 seconds
 });
 
 definitelyBtn.addEventListener('click', () => {
   response.textContent = "I knew you'd say definitely! 💖";
   noBtn.style.display = 'none';
   createFlowers();
-  setTimeout(showPopup, 2000); // Show popup after 2 seconds
+  setTimeout(showPopup, 1000); // Show popup after 2 seconds
 });
 
 closePopup.addEventListener('click', () => {
