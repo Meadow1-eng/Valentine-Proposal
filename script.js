@@ -1,39 +1,51 @@
-const yesBtn = document.getElementById("yes-btn");
-const definitelyBtn = document.getElementById("definitely-btn");
-const responsePopup = document.getElementById("response-popup");
-const closeBtn = document.getElementById("close-btn");
-const flowersContainer = document.getElementById("flowers");
+const yesBtn = document.getElementById('yes-btn');
+const definitelyBtn = document.getElementById('definitely-btn');
+const noBtn = document.getElementById('no-btn');
+const response = document.getElementById('response');
+const flowerAnimation = document.getElementById('flower-animation');
+const popup = document.getElementById('popup');
+const closePopup = document.getElementById('close-popup');
 
-// Flower animation logic
-function createFlower() {
-    const flower = document.createElement("div");
-    flower.classList.add("flower");
-
-    // Randomize flower position
-    flower.style.left = Math.random() * window.innerWidth + "px";
-    flower.style.animationDuration = Math.random() * 5 + 3 + "s"; // Random duration between 3 and 8 seconds
-
-    flowersContainer.appendChild(flower);
-
-    // Remove the flower after the animation
-    setTimeout(() => {
-        flower.remove();
-    }, 8000); // Remove after animation ends
+function moveNoButton() {
+  const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+  const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+  noBtn.style.position = 'absolute';
+  noBtn.style.left = `${x}px`;
+  noBtn.style.top = `${y}px`;
 }
 
-// Generate flowers continuously
-setInterval(createFlower, 150);
+noBtn.addEventListener('mouseover', moveNoButton);
+noBtn.addEventListener('click', moveNoButton);
 
-// Show popup on button click
-yesBtn.addEventListener("click", () => {
-    responsePopup.style.display = "flex";
+function createFlowers() {
+  for (let i = 0; i < 50; i++) {
+    const flower = document.createElement('div');
+    flower.classList.add('flower');
+    flower.style.left = `${Math.random() * 100}vw`;
+    flower.style.top = `${Math.random() * 100}vh`;
+    flower.style.animationDuration = `${Math.random() * 3 + 2}s`; // Randomize animation speed
+    flowerAnimation.appendChild(flower);
+  }
+}
+
+function showPopup() {
+  popup.style.display = 'flex';
+}
+
+yesBtn.addEventListener('click', () => {
+  response.textContent = "Yay! You made me the happiest person! 💖";
+  noBtn.style.display = 'none';
+  createFlowers();
+  setTimeout(showPopup, 2000); // Show popup after 2 seconds
 });
 
-definitelyBtn.addEventListener("click", () => {
-    responsePopup.style.display = "flex";
+definitelyBtn.addEventListener('click', () => {
+  response.textContent = "I knew you'd say definitely! 💖";
+  noBtn.style.display = 'none';
+  createFlowers();
+  setTimeout(showPopup, 2000); // Show popup after 2 seconds
 });
 
-// Close popup
-closeBtn.addEventListener("click", () => {
-    responsePopup.style.display = "none";
+closePopup.addEventListener('click', () => {
+  popup.style.display = 'none';
 });
