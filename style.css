@@ -1,131 +1,143 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ffdde1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Gradient background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Prevent scrolling */
 }
 
 .container {
-    text-align: center;
-    background-color: #ff5c8d;
-    border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 10;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
-    font-size: 3em;
-    margin-bottom: 30px;
-    color: #fff;
-    font-weight: bold;
+  color: #d32f2f; /* Red color for the text */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .buttons {
-    margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.btn {
-    background-color: #ff6f91;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    margin: 10px;
-    border-radius: 25px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-.btn:hover {
-    transform: scale(1.1);
+#yes-btn, #definitely-btn {
+  background-color: #4CAF50; /* Green for Yes and Definitely */
+  color: white;
 }
 
-.response-popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
+#yes-btn:hover, #definitely-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
 }
 
-.popup-content {
-    background-color: #fff;
-    color: #333;
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    z-index: 20;
+#no-btn {
+  background-color: #f44336; /* Red for No */
+  color: white;
+  position: relative; /* Allows the button to move */
 }
 
-.flowers-image {
-    width: 100px;
-    height: 100px;
-    margin: 20px 0;
-    border-radius: 50%;
+#response {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: #d32f2f;
 }
 
-#close-btn {
-    background-color: #ff5c8d;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1.1em;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-}
-
-/* Flower animations */
-@keyframes flowerFall {
-    0% {
-        transform: translateY(-100px) rotate(0deg);
-    }
-    100% {
-        transform: translateY(100vh) rotate(360deg);
-    }
+/* Flower Animation */
+#flower-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allow clicks to pass through */
+  z-index: 2;
 }
 
 .flower {
-    position: absolute;
-    top: -50px;
-    width: 50px;
-    height: 50px;
-    background-image: url('https://www.w3schools.com/w3images/flowers.jpg');
-    background-size: cover;
-    animation: flowerFall linear infinite;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('flower.png'); /* Add a flower image */
+  background-size: cover;
+  animation: float 5s infinite ease-in-out;
 }
 
-#flowers {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
 }
 
-/* Flower color randomness */
-.flower:nth-child(odd) {
-    background-image: url('https://www.w3schools.com/w3images/flowers.jpg');
+/* Popup Styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
 }
 
-.flower:nth-child(even) {
-    background-image: url('https://www.w3schools.com/w3images/flowers2.jpg');
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content h2 {
+  color: #d32f2f;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.popup-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.popup-content button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: #45a049;
 }
